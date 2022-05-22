@@ -8,7 +8,7 @@ public class Teste {
 	
 	public static void main(String[] args) {
 		CalculadoraDeImpostos calculadoraDeImpostos = new CalculadoraDeImpostos();
-		System.out.println(calculadoraDeImpostos.calcula(new Orcamento(new BigDecimal("100")), TipoImposto.ICMC));
+		System.out.println(calculadoraDeImpostos.calcula(new Orcamento(new BigDecimal("100")), new ImpostoICMS()));
 	}
 
 }
