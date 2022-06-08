@@ -6,34 +6,29 @@ public class Orcamento {
 
 	private BigDecimal valor;
 	private int quantidadeItens;
-	private String situacao;
+	private SituacaoOrcamento situacao;
 	
 	public Orcamento(BigDecimal valor, int quantidadeItens) {
 		this.valor = valor;
 		this.quantidadeItens = quantidadeItens;
-		this.situacao = "EM ANALISE";
+		this.situacao = new EmAnalise();
 	}
 	
-	public void aplicarDescontoExstra() {
-		BigDecimal valorDoDescontoExtra = BigDecimal.ZERO;
-		if (situacao.equals("EM ANALISE")) {
-			valorDoDescontoExtra = new BigDecimal("0.05");
-		} else if (situacao.equals("APROVADO")) {
-			valorDoDescontoExtra = new BigDecimal("0.02");
-		}
+	public void aplicarDescontoExtra() {
+		BigDecimal valorDoDescontoExtra = this.situacao.calcularDescontoExtra(this);
 		this.valor = this.valor.subtract(valorDoDescontoExtra);
 	}
 	
 	public void aprovar() {
-		this.situacao = "APROVADO";
+		this.situacao.aprovar(this);
 	}
 
 	public void reprovar() {
-		this.situacao = "REPROVADO";
+		this.situacao.reprovar(this);
 	}
 	
 	public void finalizar() {
-		this.situacao = "FINALIZADO";
+		this.situacao.finalizar(this);
 	}
 	
 	public BigDecimal getValor() {
@@ -42,6 +37,10 @@ public class Orcamento {
 
 	public int getQuantidadeItens() {
 		return quantidadeItens;
+	}
+
+	public void setSituacao(SituacaoOrcamento situacao) {
+		this.situacao = situacao;
 	}
 	
 }
