@@ -1,0 +1,2 @@
+# Introdução
+Neste repositório estarão todos os projetos desenvolvidos em cursos da alura. Cada curso terá seu respectivo branch, e uma pasta com seu nome; isso implica que cada pasta no branch main terá exatamente o nome do curso e do branch daquele curso. Por exemplo: o curso https://cursos.alura.com.br/course/introducao-design-patterns-java tem um branch com o nome introducao-design-patterns-java, e os projetos desenvolvidos nesse curso estarão dentro de uma pasta com o nome introducao-design-patterns-java.
