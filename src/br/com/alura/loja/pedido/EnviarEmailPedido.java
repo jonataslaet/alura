@@ -1,8 +1,8 @@
 package br.com.alura.loja.pedido;
 
-public class EnviarEmailPedido {
+public class EnviarEmailPedido implements AcoesAposGerarPedido{
 
-	public void execute(Pedido pedido) {
+	public void executarAcoes(Pedido pedido) {
 		System.out.println("Enviar email com dados do novo pedido");
 	}
 }
