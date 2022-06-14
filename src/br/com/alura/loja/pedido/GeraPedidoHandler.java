@@ -16,8 +16,11 @@ public class GeraPedidoHandler {
 		
 		Pedido pedido = new Pedido(gerador.getCliente(), LocalDateTime.now(), orcamento);
 		
-		System.out.println("Salvar pedido no Banco de dados");
-		System.out.println("Enviar email com dados do novo pedido");
+		EnviarEmailPedido email = new EnviarEmailPedido();
+		SalvarPedidoNoBancoDeDados salvar = new SalvarPedidoNoBancoDeDados();
+	
+		email.execute(pedido);
+		salvar.execute(pedido);
 		
 	}
 
