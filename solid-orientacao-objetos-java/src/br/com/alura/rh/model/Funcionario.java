@@ -63,4 +63,8 @@ public class Funcionario {
 		this.dataUltimoReajuste = dataUltimoReajuste;
 	}
 
+	public void promover(Cargo proximoCargo) {
+		this.cargo = proximoCargo;
+	}
+
 }
