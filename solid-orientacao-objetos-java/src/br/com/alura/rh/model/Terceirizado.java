@@ -1,15 +1,12 @@
 package br.com.alura.rh.model;
 
-import java.math.BigDecimal;
+public class Terceirizado {
 
-import br.com.alura.rh.ValidacaoException;
-
-public class Terceirizado extends Funcionario {
-
+	private DadosPessoais dadosPessoais;
 	private String empresa;
 
-	public Terceirizado(String nome, String cpf, Cargo cargo, BigDecimal salario) {
-		super(nome, cpf, cargo, salario);
+	public Terceirizado(DadosPessoais dadosPessoais) {
+		this.dadosPessoais = dadosPessoais;
 	}
 
 	public String getEmpresa() {
@@ -19,15 +16,13 @@ public class Terceirizado extends Funcionario {
 	public void setEmpresa(String empresa) {
 		this.empresa = empresa;
 	}
-	
-	@Override
-	public void promover(Cargo proximoCargo) {
-		throw new ValidacaoException("Terceirizado não pode ser promovido!");
-	}
-	
-	@Override
-	public void atualizarSalario(BigDecimal salario) {
-		throw new ValidacaoException("Terceirizado não pode ter seu salário atualizado!");
+
+	public DadosPessoais getDadosPessoais() {
+		return dadosPessoais;
 	}
 
+	public void setDadosPessoais(DadosPessoais dadosPessoais) {
+		this.dadosPessoais = dadosPessoais;
+	}
+	
 }
