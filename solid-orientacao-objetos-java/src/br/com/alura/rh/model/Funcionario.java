@@ -32,5 +32,9 @@ public class Funcionario {
 	public void promover(Cargo proximoCargo) {
 		this.dadosPessoais.setCargo(proximoCargo);
 	}
+	
+	public DadosPessoais getDadosPessoais() {
+		return this.dadosPessoais;
+	}
 
 }
