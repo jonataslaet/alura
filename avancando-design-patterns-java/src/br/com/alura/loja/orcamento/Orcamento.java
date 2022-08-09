@@ -42,5 +42,9 @@ public class Orcamento {
 	public void setSituacao(SituacaoOrcamento situacao) {
 		this.situacao = situacao;
 	}
+
+	public boolean isFinalizado() {
+		return situacao instanceof Finalizado;
+	}
 	
 }
