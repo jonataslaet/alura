@@ -4,7 +4,11 @@ import java.math.BigDecimal;
 
 import br.com.alura.loja.orcamento.Orcamento;
 
-public class ImpostoICMS implements Imposto{
+public class ImpostoICMS extends Imposto{
+
+	public ImpostoICMS(Imposto outroImposto) {
+		super(outroImposto);
+	}
 
 	@Override
 	public BigDecimal getTaxa(Orcamento orcamento) {
